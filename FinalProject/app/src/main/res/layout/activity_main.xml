@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vipul.finalproject.MainActivity">
+    <ToggleButton
+        android:id="@+id/tb_love"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/space16"
+        android:textOff=""
+        android:textOn=""
+        android:button="@drawable/toggle_button"
+        android:background="@null"/>
+    <ImageButton
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="@dimen/space16"
+        android:button="@mipmap/ic_playlist"
+        android:id="@+id/btnPLaylist"/>
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/space16"
+        android:weightSum="5">
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_repeat"
+            android:id="@+id/btnRepeat"
+            />
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/btnPrevious"
+            android:src="@mipmap/ic_rewind"
+            />
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/btnPlay"
+            android:src="@mipmap/ic_play"
+            />
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_forward"
+            android:id="@+id/btnNext" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_shuffle"
+            android:id="@+id/btnShuffle"
+            />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rl_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_bottom"
+        android:layout_margin="@dimen/space16">
+        <TextView
+            android:id="@+id/songCurrentDurationLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:textColor="@color/colorTextGrey"/>
+        <TextView
+            android:id="@+id/songTotalDurationLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:textColor="@color/colorTextGrey" />
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space8"
+            android:id="@+id/songProgressBar"
+            android:layout_toLeftOf="@id/songTotalDurationLabel"
+            android:layout_toRightOf="@id/songCurrentDurationLabel"
+            android:layout_marginLeft="@dimen/space16"
+            android:layout_marginRight="@dimen/space16"
+            android:layout_centerVertical="true"
+            android:progressBackgroundTint="#E9E9E9"
+            android:indeterminate="false"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/progress_bar"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_progress"
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"
+        android:textColor="@color/colorTextGrey" />
+    <TextView
+        android:id="@+id/songTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_artist"
+        android:layout_marginBottom="@dimen/space8"
+        android:layout_centerHorizontal="true"
+        android:text="Make War"
+        android:textSize="18sp"
+        android:textColor="@color/colorTextDark" />
+    <LinearLayout
+        android:id="@+id/songThumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/songTitle"
+        android:layout_below="@id/tb_love"
+        android:layout_marginTop="@dimen/space16"
+        android:layout_marginBottom="@dimen/space16">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+</RelativeLayout>
+
+
